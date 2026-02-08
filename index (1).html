@@ -1,0 +1,1159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="EcoGadgets - Your source for sustainable technology and eco-friendly gadgets. Practice SEO with this responsive website designed for learning sitemaps, robots.txt, and Google Search Console."
+    />
+    <title>EcoGadgets | Sustainable Technology & Eco-Friendly Gadgets</title>
+    <link rel="canonical" href="https://ecogadgets.example.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* CSS Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #1a936f;
+        --primary-dark: #0d5d47;
+        --secondary: #88d498;
+        --accent: #f9c74f;
+        --light: #f1faee;
+        --dark: #1d3557;
+        --gray: #6c757d;
+        --success: #4caf50;
+      }
+
+      body {
+        font-family: "Poppins", "Segoe UI", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header & Navigation */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        color: var(--primary);
+        font-size: 1.8rem;
+        margin-right: 0.5rem;
+      }
+
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--dark);
+      }
+
+      .logo-text span {
+        color: var(--primary);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.8rem;
+      }
+
+      nav ul li a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary);
+      }
+
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover:after {
+        width: 100%;
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--dark);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        background:
+          linear-gradient(rgba(26, 147, 111, 0.9), rgba(26, 147, 111, 0.8)),
+          url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.3rem;
+        max-width: 800px;
+        margin: 0 auto 2.5rem;
+        opacity: 0.95;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--dark);
+        padding: 0.9rem 2.2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn:hover {
+        background-color: #e6b43c;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-dark);
+      }
+
+      /* Section Common Styles */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.4rem;
+        color: var(--dark);
+        margin-bottom: 0.8rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary);
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .section-title p {
+        color: var(--gray);
+        max-width: 700px;
+        margin: 1.5rem auto 0;
+      }
+
+      /* Features Section */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background-color: rgba(26, 147, 111, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: var(--primary);
+        font-size: 1.8rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      /* Products Section */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .product-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-img {
+        height: 200px;
+        background-color: #f1f1f1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gray);
+        font-size: 3rem;
+      }
+
+      .product-info {
+        padding: 1.8rem;
+      }
+
+      .product-category {
+        color: var(--primary);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        color: var(--dark);
+      }
+
+      .product-description {
+        color: var(--gray);
+        margin-bottom: 1.2rem;
+        font-size: 0.95rem;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 1.2rem;
+      }
+
+      /* SEO Practice Section */
+      .seo-practice {
+        background-color: var(--light);
+        border-radius: 15px;
+        padding: 3rem;
+        margin-top: 3rem;
+      }
+
+      .seo-practice h3 {
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+
+      .seo-tasks {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .seo-task {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .seo-task h4 {
+        color: var(--dark);
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .seo-task h4 i {
+        margin-right: 0.7rem;
+        color: var(--primary);
+      }
+
+      /* About Section */
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        color: var(--dark);
+        margin-bottom: 1.2rem;
+      }
+
+      .about-text p {
+        margin-bottom: 1.5rem;
+        color: var(--gray);
+      }
+
+      .about-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-top: 0.3rem;
+      }
+
+      .about-image {
+        flex: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      .contact-info {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-info h3 {
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+      }
+
+      .contact-detail {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-detail i {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+      }
+
+      .contact-form {
+        background-color: white;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-form h3 {
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: var(--secondary);
+      }
+
+      .footer-links {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.8rem;
+      }
+
+      .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #aaa;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .about-content {
+          flex-direction: column;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        nav ul {
+          position: fixed;
+          top: 80px;
+          left: 0;
+          width: 100%;
+          background-color: white;
+          flex-direction: column;
+          align-items: center;
+          padding: 1.5rem 0;
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: all 0.3s;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          z-index: 99;
+        }
+
+        nav ul.show {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        nav ul li {
+          margin: 0.8rem 0;
+        }
+
+        .hero {
+          padding: 4rem 0;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .seo-practice {
+          padding: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .section-title h2 {
+          font-size: 1.7rem;
+        }
+
+        .feature-card,
+        .product-card,
+        .contact-info,
+        .contact-form {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="logo-text">Eco<span>Gadgets</span></div>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav>
+          <ul id="mainNav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#seo">SEO Practice</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container">
+        <h1>Sustainable Technology for a Greener Tomorrow</h1>
+        <p>
+          Discover eco-friendly gadgets and sustainable tech solutions that
+          reduce your carbon footprint without compromising on performance.
+        </p>
+        <a href="#products" class="btn">Explore Products</a>
+        <a href="#seo" class="btn btn-primary" style="margin-left: 1rem"
+          >Practice SEO</a
+        >
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Why Choose EcoGadgets?</h2>
+          <p>
+            Our commitment to sustainability and innovation sets us apart in the
+            tech industry.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-solar-panel"></i>
+            </div>
+            <h3>Solar Powered</h3>
+            <p>
+              Many of our gadgets are powered by solar energy, reducing
+              dependence on traditional electricity sources.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-recycle"></i>
+            </div>
+            <h3>Recycled Materials</h3>
+            <p>
+              We use recycled and biodegradable materials in our products to
+              minimize environmental impact.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-battery-full"></i>
+            </div>
+            <h3>Long Battery Life</h3>
+            <p>
+              Energy-efficient designs with long-lasting batteries to reduce
+              charging frequency and energy consumption.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Carbon-Neutral Shipping</h3>
+            <p>
+              All our shipments are carbon-neutral, with eco-friendly packaging
+              materials.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" style="background-color: #f8f9fa">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Eco-Friendly Products</h2>
+          <p>
+            Discover our selection of sustainable technology designed for modern
+            living.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-img">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Solar Tech</div>
+              <h3 class="product-title">Solar-Powered Charger</h3>
+              <p class="product-description">
+                Fast-charging solar power bank with 20,000mAh capacity. Perfect
+                for outdoor adventures and emergency power backup.
+              </p>
+              <div class="product-price">$89.99</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <i class="fas fa-headphones"></i>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Audio</div>
+              <h3 class="product-title">Bamboo Wireless Earbuds</h3>
+              <p class="product-description">
+                Premium sound quality with biodegradable bamboo casing. 30-hour
+                battery life with quick charging.
+              </p>
+              <div class="product-price">$129.99</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-img">
+              <i class="fas fa-watch"></i>
+            </div>
+            <div class="product-info">
+              <div class="product-category">Wearables</div>
+              <h3 class="product-title">Eco-Smart Watch</h3>
+              <p class="product-description">
+                Fitness tracking with recycled aluminum body and solar-assisted
+                charging. Tracks your carbon footprint.
+              </p>
+              <div class="product-price">$199.99</div>
+              <a href="#" class="btn">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="seo-practice">
+          <h3>SEO Practice Area</h3>
+          <p>
+            This website is designed for practicing SEO techniques. Below are
+            specific tasks you can perform:
+          </p>
+
+          <div class="seo-tasks">
+            <div class="seo-task">
+              <h4><i class="fas fa-sitemap"></i> Create Sitemap</h4>
+              <p>
+                Generate an XML sitemap for this website including all sections
+                and product pages.
+              </p>
+            </div>
+
+            <div class="seo-task">
+              <h4><i class="fas fa-robot"></i> Robots.txt File</h4>
+              <p>
+                Create a robots.txt file to control search engine crawling
+                behavior for this site.
+              </p>
+            </div>
+
+            <div class="seo-task">
+              <h4><i class="fab fa-google"></i> GSC Verification</h4>
+              <p>
+                Practice verifying this website in Google Search Console using
+                different methods.
+              </p>
+            </div>
+
+            <div class="seo-task">
+              <h4><i class="fas fa-search"></i> Meta Tags Optimization</h4>
+              <p>
+                Optimize meta titles and descriptions for each section of this
+                website.
+              </p>
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-top: 2rem;
+              padding: 1.5rem;
+              background-color: white;
+              border-radius: 8px;
+            "
+          >
+            <h4 style="color: var(--dark); margin-bottom: 1rem">
+              Code Snippet for Practice:
+            </h4>
+            <div
+              style="
+                background-color: #2d3748;
+                color: #e2e8f0;
+                padding: 1.2rem;
+                border-radius: 6px;
+                font-family: monospace;
+                font-size: 0.9rem;
+              "
+            >
+              &lt;!-- Example robots.txt for this site --&gt;<br />
+              User-agent: *<br />
+              Allow: /<br />
+              Disallow: /admin/<br />
+              Disallow: /private/<br />
+              <br />
+              Sitemap: https://ecogadgets.example.com/sitemap.xml
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About EcoGadgets</h2>
+          <p>
+            Our mission is to make sustainable technology accessible to
+            everyone.
+          </p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Driving the Green Tech Revolution</h3>
+            <p>
+              Founded in 2020, EcoGadgets began with a simple vision: to create
+              technology that doesn't harm the planet. We believe that
+              innovation and sustainability can go hand-in-hand.
+            </p>
+            <p>
+              Our team of engineers and environmental scientists work together
+              to develop products that minimize environmental impact while
+              maximizing performance and user experience.
+            </p>
+            <p>
+              Every product in our lineup undergoes rigorous testing for energy
+              efficiency, material sustainability, and overall environmental
+              impact before reaching our customers.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Products Sold</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Tons of CO2 Saved</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Countries Served</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="EcoGadgets team working on sustainable technology"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: white">
+      <div class="container">
+        <div class="section-title">
+          <h2>Get in Touch</h2>
+          <p>
+            Have questions about our products or need help with your order?
+            Contact us today.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+
+            <div class="contact-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Our Location</h4>
+                <p>123 Green Street, Eco City, EC 12345</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Phone Number</h4>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email Address</h4>
+                <p>info@ecogadgets.example.com</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 9am - 6pm</p>
+                <p>Saturday: 10am - 4pm</p>
+              </div>
+            </div>
+
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="general">General Inquiry</option>
+                  <option value="product">Product Question</option>
+                  <option value="order">Order Support</option>
+                  <option value="seo">SEO Practice Question</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>EcoGadgets</h3>
+            <p>
+              Sustainable technology for a better future. We're committed to
+              reducing electronic waste and promoting eco-friendly tech
+              solutions.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #ccc">
+              This website is designed for SEO practice purposes.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>SEO Practice Resources</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" onclick="return false;">XML Sitemap Generator</a>
+              </li>
+              <li><a href="#" onclick="return false;">Robots.txt Tester</a></li>
+              <li><a href="#" onclick="return false;">Meta Tag Analyzer</a></li>
+              <li>
+                <a href="#" onclick="return false;"
+                  >Structured Data Validator</a
+                >
+              </li>
+              <li>
+                <a href="#" onclick="return false;">Google Search Console</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#" onclick="return false;">Privacy Policy</a></li>
+              <li><a href="#" onclick="return false;">Terms of Service</a></li>
+              <li><a href="#" onclick="return false;">Cookie Policy</a></li>
+              <li>
+                <a href="#" onclick="return false;">Sustainability Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2023 EcoGadgets. All rights reserved. | This is a practice
+            website for SEO learning purposes.
+          </p>
+          <p style="margin-top: 0.5rem">
+            Practice creating sitemaps, robots.txt, and GSC indexing with this
+            website.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mainNav = document.getElementById("mainNav");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mainNav.classList.toggle("show");
+      });
+
+      // Close mobile menu when clicking a link
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("show");
+        });
+      });
+
+      // Form submission
+      const contactForm = document.getElementById("contactForm");
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert(
+          "Thank you for your message! This is a practice form for SEO learning. No actual data was sent.",
+        );
+        contactForm.reset();
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
